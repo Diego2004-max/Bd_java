@@ -3,10 +3,9 @@ package com.ucc.repository;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.ucc.model.Actor;
-
-public interface IRepository {
-    List<Actor> findAll() throws SQLException;
-    Actor save(Actor actor) throws SQLException;
-
+public interface IRepository<T> {
+    List<T> findAll() throws SQLException;
+    T save(T entity) throws SQLException;
+    T update(T entity) throws SQLException;
+    void delete(int id) throws SQLException;
 }
